@@ -1,0 +1,11 @@
+<div>
+  <div>
+    <app-greetings></app-greetings>
+    <app-greetings name="wilma"></app-greetings>
+    <app-greetings name="bambam"></app-greetings>
+  </div>
+  <div>
+    <app-registration (onNewRegistration)="newRegistration($event)"></app-registration>
+    <app-registration (onNewRegistration)="newRegistration($event)" [registration]="betty"></app-registration>
+  </div>
+</div>
