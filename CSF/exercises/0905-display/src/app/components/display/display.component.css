@@ -1,0 +1,19 @@
+.thumbnail-0 {
+    border-radius: 200px;
+    width: 10vw;
+    height: auto;
+    display: block;
+}
+
+.thumbnail-1 {
+    border-radius: 500px;
+    height: auto;
+    display: block;
+}
+
+.box-it {
+    padding: 10px;
+    margin: 10px;
+    border: 1px gray solid;
+    border-radius: 10px;
+}

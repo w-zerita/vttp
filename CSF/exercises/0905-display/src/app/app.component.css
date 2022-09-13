@@ -1,0 +1,10 @@
+code {
+    color: red;
+    font-weight: bolder;
+}
+
+div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,10 @@
+<!-- <div>
+    <img src="/assets/dov0.gif" class="thumbnail-0">
+    <p>Tired bear</p>
+    <button type="button">Add to Cart</button>
+</div> -->
+<div class="box-it" (mouseenter)="enter()" (mouseleave)="exit()">
+    <img [src]="image" [class]="styleClass">
+    <p [style.font-size]="fontSize">{{ caption }}</p>
+    <button type="button" [disabled]="addToCart" (click)="process()">Add to Cart</button>
+</div>

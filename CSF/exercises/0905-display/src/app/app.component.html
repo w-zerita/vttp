@@ -1,0 +1,7 @@
+<h1><code>hello,world</code></h1>
+<app-display></app-display>
+
+<h3>{{ image }} ({{ count }})</h3>
+<app-display1 (onClick)="imageClicked($event)"></app-display1>
+<app-display1 [image]="image" caption="dancing bear" (onClick)="imageClicked($event)"></app-display1>
+<app-display1 image="/assets/dov2.gif" caption="indecisive bear" (onClick)="imageClicked($event)"></app-display1>
