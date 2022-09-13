@@ -1,0 +1,5 @@
+<div>
+  <h3>{{ selectedNumbersString }}</h3>
+  <app-numbers [currNum]="currNum" (onNumberClicked)="numberClicked($event)"></app-numbers>
+  <button type="button" (click)="reset()">Reset</button>
+</div>

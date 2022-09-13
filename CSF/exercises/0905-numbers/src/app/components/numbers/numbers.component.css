@@ -1,0 +1,14 @@
+img {
+    width: 10vw;
+    border: 1px solid grey;
+}
+
+div {
+    margin: 8px;
+}
+
+.center-it {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
