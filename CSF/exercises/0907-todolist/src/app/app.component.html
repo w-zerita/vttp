@@ -1,0 +1,23 @@
+<div class="box-it">
+  <button type="button" (click)="randomise()">Add</button>
+  <app-list [numList]="numList"></app-list>
+</div>
+
+<div>
+  <app-todo>
+    <div>
+      <button type="button" style="margin-right: 8px;" (click)="saveTodo()"
+        [disabled]="todoComp?.invalid">Save</button>
+      <button type="button" style="margin-right: 8px;">Update</button>
+      <button type="button" style="margin-right: 8px;">Delete</button>
+    </div>
+  </app-todo>
+</div>
+<div>
+  <app-todo #todo>
+    <div>
+      <button type="button" style="margin-right: 8px;" (click)="saveTodo()"
+        [disabled]="todoComp?.invalid">Save</button>
+    </div>
+  </app-todo>
+</div>
