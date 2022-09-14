@@ -1,0 +1,9 @@
+<div>
+  <h3>Order Management System</h3>
+  <div>
+    <app-item (onNewItem)="newItem($event)"></app-item>
+  </div>
+  <div>
+    <app-cart [cart]="cart" (onDeleteItem)="deleteItem($event)"></app-cart>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="box-it">
+    <h3>Shopping Cart</h3>
+    <p *ngIf="_cart.length <= 0">Your cart is empty</p>
+    <table *ngIf="_cart.length > 0">
+        <tr>
+            <th>Name</th>
+            <th>Unit Price</th>
+            <th>Quantity</th>
+            <td></td>
+        </tr>
+        <tr *ngFor="let i of _cart; let idx = index">
+            <td>{{ i.name }}</td>
+            <td>{{ i.unitPrice | currency }}</td>
+            <td>{{ i.quantity }}</td>
+            <td>
+                <button (click)="deleteItem(idx)">X</button>
+            </td>
+        </tr>
+        <tr>
+            <td>TOTAL:</td>
+            <td></td>
+            <td></td>
+            <td>{{ total | currency }}</td>
+        </tr>
+    </table>
+</div>
