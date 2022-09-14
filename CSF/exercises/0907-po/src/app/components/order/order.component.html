@@ -1,0 +1,50 @@
+<div class="box-it">
+    <h3>Place Your Order</h3>
+    <form [formGroup]="orderForm" (ngSubmit)="processOrder()">
+        <div>
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td>
+                        <input type="text" id="name" size="30" placeholder="Enter your name" 
+                            formControlName="name">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mobile:</td>
+                    <td>
+                        <input type="tel" id="mobile" size="30" placeholder="Enter your mobile" 
+                            formControlName="mobile">
+                    </td>
+                </tr>
+                <tr>
+                    <td><button type="submit" [disabled]="orderForm.invalid">Save</button></td>
+                    <td><button type="button" (click)="addItem()">Add</button></td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <table *ngIf="lineItemsArray.controls.length > 0">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                    </tr>
+                </thead>
+                <tbody formArrayName="lineItems">
+                    <tr *ngFor="let li of lineItemsArray.controls; let idx = index;" [formGroup]="li">
+                        <td>
+                            <input type="text" size="30" formControlName="item">
+                        </td>
+                        <td>
+                            <input type="number" min="1" formControlName="quantity">
+                        </td>
+                        <td>
+                            <button type="button" (click)="removeItem()">X</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
+</div>

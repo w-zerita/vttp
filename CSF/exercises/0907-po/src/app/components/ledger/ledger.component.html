@@ -1,0 +1,17 @@
+<div class="box-it">
+    <h3>Orders Ledger</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Item Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let o of ordersDB | keyvalue; let i = index;" (click)="edit(o.key)">
+                <td><code>{{ o.key }}</code></td>
+                <td><span>{{ o.value.name }}</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
