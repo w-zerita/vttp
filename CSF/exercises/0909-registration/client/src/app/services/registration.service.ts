@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 import { lastValueFrom } from "rxjs";
 import { Registration, Response } from "../models";
 
-const URL = 'http://localhost:8080/api/registration'
+const URL = 'https://wz-registration-app.herokuapp.com/api/registration'
 
 @Injectable()
 export class RegistrationService {
