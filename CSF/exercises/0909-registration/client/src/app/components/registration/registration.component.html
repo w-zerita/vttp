@@ -1,0 +1,26 @@
+<div class="card">
+    <div class="card-header">
+        <h5>Registration Form</h5>
+    </div>
+    <div class="card-body">
+        <form [formGroup]="form" (ngSubmit)="processRegistration()">
+            <div class="row mb-3">
+                <label for="name" class="col-sm-2 col-form-label col-form-label-sm">Name</label>
+                <div class="col-sm-5">
+                    <input type="text" id="name" size="30" placeholder="Enter your name" formControlName="name"
+                        class="form-control form-control-sm">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="email" class="col-sm-2 col-form-label col-form-label-sm">Email</label>
+                <div class="col-sm-5">
+                    <input type="email" id="email" size="30" placeholder="Enter your email" formControlName="email"
+                        class="form-control form-control-sm">
+                </div>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-dark btn-sm" [disabled]="form.invalid">Register</button>
+            </div>
+        </form>
+    </div>
+</div>
