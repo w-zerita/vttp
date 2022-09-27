@@ -1,0 +1,20 @@
+<div class="container d-flex justify-content-center">
+    <div class="card mb-3 col-10">
+        <div class="row g-0">
+            <div class="col-md-4 my-auto d-flex justify-content-center">
+                <img src="{{ bookDetails.imageUrl }}" class="img-fluid rounded-start" alt="">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{ bookDetails.title }}</h5>
+                    <p class="card-text"><strong>Author(s):</strong> {{ bookDetails.authors }}</p>
+                    <p class="card-text"><strong>Description:</strong> {{ bookDetails.description }}</p>
+                    <p class="card-text"><strong>Rating:</strong> {{ bookDetails.rating | number: '1.0-2' }}</p>
+                    <p class="card-text"><strong>Genres:</strong> {{ bookDetails.genres }}</p>
+                    <p class="card-text"><small class="text-muted">Book ID: {{ bookDetails.bookId }}</small></p>
+                    <button type="button" class="btn btn-danger btn-sm" [routerLink]="['/']">Back</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

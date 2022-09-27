@@ -1,0 +1,22 @@
+<div class="container d-flex justify-content-center">
+    <div class="card col-8">
+        <div class="card-header text-center">Goodreads</div>
+        <div class="card-body">
+            <ul>
+                <li *ngFor="let b of books">
+                    <a [routerLink]="['/books', b.bookId]">{{ b.title }}</a>
+                    <!-- changes DOM history but does not trigger a request to the backend -->
+                    <!-- when routing is set up, it listens to history list -->
+                </li>
+            </ul>
+        </div>
+        <div class="card-footer d-flex justify-content-center">
+            <div class="btn-group btn-group-sm col-4" role="group">
+                <button type="button" class="btn btn-outline-dark" 
+                    (click)="previous()" [disabled]="startOfList">Previous</button>
+                <button type="button" class="btn btn-outline-dark" 
+                    (click)="next()" [disabled]="endOfList">Next</button>
+            </div>
+        </div>
+    </div>
+</div>

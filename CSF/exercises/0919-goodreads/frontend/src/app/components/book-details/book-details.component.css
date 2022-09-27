@@ -1,0 +1,9 @@
+img {
+    height: 50vh;
+    width: 30vh;
+}
+
+p {
+    max-height: 10.5em;
+    overflow: scroll;
+}
