@@ -1,0 +1,15 @@
+<h1>My first SPA</h1>
+
+<div class="black-box">
+  <a [routerLink]="[ '/' ]">Home</a>
+  <a [routerLink]="[ '/', 'cat' ]">Cat</a>
+  <a [routerLink]="[ '/', 'dog' ]">Dog</a>
+  <a [routerLink]="[ '/', 'number' ]">Number</a>
+  <button type="button" [routerLink]="[ 'cat' ]">Cat</button>
+  <button type="button" (click)="clicked()">Click Me!</button>
+  <!-- bind anything clickable using event to control route programmatically using typescript -->
+</div>
+
+<div class="black-box">
+  <router-outlet></router-outlet>
+</div>
