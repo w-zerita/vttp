@@ -1,2 +1,2 @@
 <app-inventory (onAddItem)="addItem($event)"></app-inventory>
-<app-cart [cartItems]="cartItems"></app-cart>
+<app-cart [cartItems]="cartItems" (onRemoveItem)="removeItem($event)"></app-cart>

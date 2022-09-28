@@ -18,4 +18,10 @@ export class AppComponent {
     }
     console.log('>>> add item: ', item)
   }
+
+  removeItem(idx: number) {
+    const tmp: Item[] = [ ...this.cartItems ]
+    tmp.splice(idx, 1)
+    this.cartItems = tmp
+  }
 }

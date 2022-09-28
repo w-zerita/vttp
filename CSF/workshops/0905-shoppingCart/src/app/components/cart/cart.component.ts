@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
+import { Subject } from 'rxjs';
 import { Item } from 'src/app/models';
 
 @Component({
@@ -7,6 +8,9 @@ import { Item } from 'src/app/models';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
+
+  @Output()
+  onRemoveItem = new Subject<number>
 
   @Input()
   set cartItems(item: Item[]) {
@@ -18,6 +22,11 @@ export class CartComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  removeItem(idx: number) {
+    console.log(`>>> remove item ${idx + 1}`)
+    this.onRemoveItem.next(idx)
   }
 
 }
