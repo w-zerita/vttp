@@ -26,6 +26,8 @@ export class CartComponent implements OnInit {
 
   removeItem(idx: number) {
     console.log(`>>> remove item ${idx + 1}`)
+    console.log('>>> item: ', this._cartItems[idx])
+    this._cartItems[idx].quantity = 0
     this.onRemoveItem.next(idx)
   }
 
