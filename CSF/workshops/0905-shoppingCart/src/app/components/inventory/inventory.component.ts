@@ -12,7 +12,7 @@ export class InventoryComponent implements OnInit {
   @Output()
   onAddItem = new Subject<Item>()
 
-  item: Item = {}
+  item!: Item
   items: Item[] = []
 
   constructor() {}
@@ -24,6 +24,8 @@ export class InventoryComponent implements OnInit {
   addItem(idx: number) {
     console.log(`>>> add item ${idx + 1}`)
     console.log('>>> item: ', this.items[idx])
+    this.items[idx].quantity++
+    console.log('>>> quantity: ', this.items[idx].quantity)
     this.onAddItem.next(this.items[idx])
   }
 
@@ -34,7 +36,6 @@ export class InventoryComponent implements OnInit {
         description: `Item ${i}`,
         quantity: 0
       }
-      console.log('>>> item: ', this.item)
       this.items.push(this.item)
       // this.items = [ ...this.items, this.item ]
     }

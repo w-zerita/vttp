@@ -13,7 +13,10 @@ export class AppComponent {
 
   addItem(item: Item) {
     // check if item has been added to cart
-    if (!this.cartItems.includes(item)) {
+    if (this.cartItems.includes(item)) {
+      const idx = this.cartItems.findIndex(i => i == item)
+      this.cartItems.splice(idx, 1, item)
+    } else {
       this.cartItems.push(item)
     }
     console.log('>>> add item: ', item)
