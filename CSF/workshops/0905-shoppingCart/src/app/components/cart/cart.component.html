@@ -1,0 +1,12 @@
+<div>
+    <h3>My Cart</h3>
+    <p *ngIf="_cartItems.length <= 0">Cart is empty</p>
+    <table *ngIf="_cartItems.length > 0">
+        <tr *ngFor="let i of _cartItems; let idx = index">
+            <td><img src="{{ i.image }}"></td>
+            <td>{{ i.description }}</td>
+            <td>Quantity: {{ i.quantity }}</td>
+            <td><button type="button">Remove</button></td>
+        </tr>
+    </table>
+</div>

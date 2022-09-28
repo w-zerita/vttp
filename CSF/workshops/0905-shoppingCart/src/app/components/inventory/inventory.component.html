@@ -1,0 +1,10 @@
+<div>
+    <h3>Please Select</h3>
+    <table>
+        <tr *ngFor="let i of items; let idx = index">
+            <td><img src="{{ i.image }}"></td>
+            <td>{{ i.description }}</td>
+            <td><button type="button" (click)="addItem(idx)">Add</button></td>
+        </tr>
+    </table>
+</div>

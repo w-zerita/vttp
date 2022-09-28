@@ -1,0 +1,11 @@
+img {
+    width: 5vw;
+    margin: 10px;
+}
+
+table, tr {
+    width: 40%;
+    border: 1px solid;
+    border-collapse: collapse;
+    text-align: center;
+}
