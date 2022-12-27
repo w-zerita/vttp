@@ -1,0 +1,53 @@
+<h3>Results</h3>
+
+<div>
+    <form [formGroup]="form">
+        <select #filter (change)="selectFilter(filter.value)">
+            <option default value="all">SHOW ALL</option>
+            <option value="error">SHOW ERROR ONLY</option>
+        </select>
+        
+        <table>
+            <tr>
+                <td>VTF:</td>
+                <td>CDXXXX012345A</td>
+            </tr>
+            <tr>
+                <td>Date:</td>
+                <td>27/12/2022</td>
+            </tr>
+        </table>
+        <br>
+        <table [ngSwitch]="filter.value">
+            <thead>
+                <tr>
+                    <th>TOPIC</th>
+                    <th>TEST</th>
+                    <th>ACTUAL</th>
+                    <th>EXPECTATION</th>
+                    <th>STATUS</th>
+                </tr>
+            </thead>
+            <tbody *ngSwitchCase="'all'">
+                <tr *ngFor="let c of allComparison">
+                    <td>{{ c.topic }}</td>
+                    <td>{{ c.test }}</td>
+                    <td>{{ c.actual }}</td>
+                    <td>{{ c.expectation }}</td>
+                    <td *ngIf="c.pass">PASS</td>
+                    <td *ngIf="!c.pass">ERROR</td>
+                </tr>
+            </tbody>
+            <tbody *ngSwitchCase="'error'">
+                <tr *ngFor="let c of errorComparison">
+                    <td>{{ c.topic }}</td>
+                    <td>{{ c.test }}</td>
+                    <td>{{ c.actual }}</td>
+                    <td>{{ c.expectation }}</td>
+                    <td *ngIf="c.pass">PASS</td>
+                    <td *ngIf="!c.pass">ERROR</td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
