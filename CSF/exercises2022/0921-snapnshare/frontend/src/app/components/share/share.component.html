@@ -1,0 +1,21 @@
+<div class="center-it">
+    <img [src]="imageData" [width]="imageWidth">
+</div>
+
+<form [formGroup]="form" (ngSubmit)="shareIt()" class="center-items">
+    <mat-form-field appearance="standard">
+        <mat-label>Title</mat-label>
+        <input matInput type="text" size="40" formControlName="title">
+    </mat-form-field>
+    <mat-form-field appearance="standard">
+        <mat-label>Caption</mat-label>
+        <textarea matInput cols="30" rows="4" formControlName="caption"></textarea>
+    </mat-form-field>
+    <div>
+        <button mat-raised-button color="warn" [routerLink]="['/']">
+            Cancel
+            <mat-icon fontIcon="cancel"></mat-icon>
+        </button>
+        <button mat-raised-button color="primary" [disabled]="canShare">Share</button>
+    </div>
+</form>

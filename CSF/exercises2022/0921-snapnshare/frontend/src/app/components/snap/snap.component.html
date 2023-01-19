@@ -1,0 +1,11 @@
+<div>
+    <div class="center-it space-around">
+        <webcam [width]="width" [trigger]="trigger" (imageCapture)="snapshot($event)"></webcam>
+    </div>
+    <div class="center-it">
+        <button mat-raised-button color="primary" (click)="takePicture()">
+            Snap
+            <mat-icon fontIcon="photo_camera"></mat-icon>
+        </button>
+    </div>
+</div>

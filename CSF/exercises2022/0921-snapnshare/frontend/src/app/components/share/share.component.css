@@ -1,0 +1,17 @@
+.img-90wv {
+    width: 90vw;
+  }
+
+.center-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+img {
+    margin-top: 5vh;
+}
+
+button {
+    margin: 5vw;
+}
