@@ -1,0 +1,60 @@
+<form [formGroup]="form" (ngSubmit)="processForm()">
+    <table>
+        <tr>
+            <th>Dropdown 1:</th>
+            <td>
+                <select formControlName="dropdown1" (change)="changeOptions($event)">
+                    <option *ngFor="let i of dd1Options">{{ i }}</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>Dropdown 2:</th>
+            <td>
+                <select formControlName="dropdown2">
+                    <option *ngFor="let i of dd2Options">{{ i }}</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>Dropdown 3:</th>
+            <td>
+                <select formControlName="dropdown3">
+                    <option *ngFor="let i of dd3Options">{{ i }}</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>Dropdown 4:</th>
+            <td>
+                <select formControlName="dropdown4">
+                    <option *ngFor="let i of dd4Options">{{ i }}</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>Dropdown 5:</th>
+            <td>
+                <select formControlName="dropdown5">
+                    <option *ngFor="let i of dd5Options">{{ i }}</option>
+                </select>
+            </td>
+        </tr>
+        <tr *ngIf="form.contains('dropdown6')">
+            <th>Dropdown 6:</th>
+            <td>
+                <select formControlName="dropdown6">
+                    <option *ngFor="let i of dd6Options">{{ i }}</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="reset">Reset</button>
+            </td>
+            <td>
+                <button type="submit">Submit</button>
+            </td>
+        </tr>
+    </table>
+</form>
