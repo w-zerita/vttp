@@ -1,0 +1,33 @@
+<div class="container text-center d-flex justify-content-center">
+    <div class="card col-8">
+        <div class="card-header">Add a Contact</div>
+        <div class="card-body">
+            <form [formGroup]="form" (ngSubmit)="processForm()">
+                <div class="row mb-3">
+                    <label for="name" class="col-sm-3 col-form-label col-form-label-sm">Name</label>
+                    <div class="col-sm-8">
+                        <input type="text" id="name" size="30" placeholder="Enter name of contact"
+                            formControlName="name" class="form-control form-control-sm">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="email" class="col-sm-3 col-form-label col-form-label-sm">Email</label>
+                    <div class="col-sm-8">
+                        <input type="email" id="email" size="30" placeholder="Enter email of contact"
+                            formControlName="email" class="form-control form-control-sm">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="mobile" class="col-sm-3 col-form-label col-form-label-sm">Mobile</label>
+                    <div class="col-sm-8">
+                        <input type="tel" id="mobile" size="30" placeholder="Enter mobile number of contact"
+                            formControlName="mobile" class="form-control form-control-sm">
+                    </div>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-outline-dark btn-sm" [disabled]="form.invalid">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

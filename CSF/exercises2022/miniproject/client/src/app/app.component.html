@@ -1,0 +1,14 @@
+<div class="container m-5">
+  <div class="row d-flex justify-content-center mb-3">
+    <div class="btn-group btn-group-sm col-8" role="group">
+      <button type="button" class="btn btn-outline-dark" (click)="addContact()">Add</button>
+      <button type="button" class="btn btn-outline-dark" (click)="listContacts()">List</button>
+    </div>
+  </div>
+  <div class="row" *ngIf="showAddContact == true">
+    <app-add-contact (onNewContact)="listContacts()"></app-add-contact>
+  </div>
+  <div class="row" *ngIf="showAddContact == false">
+    <app-list-contacts></app-list-contacts>
+  </div>
+</div>

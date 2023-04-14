@@ -1,0 +1,28 @@
+<div class="container text-center d-flex justify-content-center">
+    <div class="card col-8">
+        <div class="card-header">List of Contacts</div>
+        <div class="card-body table-responsive">
+            <table class="table table-bordered table-hover table-sm">
+                <thead class="table-light">
+                    <tr>
+                        <th>Name</th>
+                        <th>Mobile</th>
+                        <th>Email</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider" *ngFor="let c of contacts">
+                    <tr>
+                        <td>{{ c.name }}</td>
+                        <td>{{ c.mobile }}</td>
+                        <td>{{ c.email }}</td>
+                        <td>
+                            <button type="button" class="btn btn-danger btn-sm"
+                                (click)="deleteContact(c)">X</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
